@@ -5,10 +5,10 @@ from msrest.authentication import ApiKeyCredentials
 import numpy as np
 import os
 
-ENDPOINT = "https://birdvision64.cognitiveservices.azure.com/"
+ENDPOINT = "YOUR RESOURCE ENDPOINT"
 
 # Replace with a valid key
-training_key = "a5c1550ecadb4f7e908f84386e151a8f"
+training_key = "YOUR RESOURCE KEY"
 credentials = ApiKeyCredentials(in_headers={"Training-key": training_key})
 publish_iteration_name = "classifyBirdModel"
 
@@ -16,8 +16,7 @@ trainer = CustomVisionTrainingClient(ENDPOINT, credentials)
 
 # Create a new project
 print ("Creating project...")
-# project = trainer.create_project("Bird Classification")
-# print(project.id)
+project = trainer.create_project("Bird Classification")
 
 print("Project created!")
 
